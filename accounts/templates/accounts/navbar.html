@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+    	{% load static %}
+    <link rel="icon" href="{% static 'logo.svg' %}">
+
+    {% block head %}<title>Base document</title>{% endblock %}
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <a href="{% url 'read' %}">
+          <div class="logo_text">
+              <img class="logo" src="{% static 'logo.svg' %}" alt="logo">
+              <h1>John's life</h1>
+          </div></a>
+            <li class="item"><a href="{% url 'write' %}">Publier</a></li>
+            <li class="item"><a href="{% url 'presentation' %}">Qui est John ?</a></li>
+            <li class="item"><a href="#">Les tutoriels</a></li>
+            {% if user.is_authenticated %}
+            <li class="item button"><a href="{% url 'home' %}">AUTHENTICATED AS {{ user }}</a></li>
+            <li class="item button secondary"><a href="{% url 'logout' %}">Se DEconnecter</a></li>
+            {% else %}
+            <li class="item button"><a href="{% url 'register' %}">Devenir un John</a></li>
+            <li class="item button secondary"><a href="{% url 'login' %}">Se connecter</a></li>
+            <li class="toggle"><span class="bars"></span></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="con" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+
+    {% block body %}
+    {% endblock %}
+
+    </div>
+</body>
+</html>
+

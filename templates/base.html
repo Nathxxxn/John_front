@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}John's Life{% endblock %}</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            color: #2E2D4D;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #AB22FF;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        header img {
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #AB22FF;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{% static 'story/img/logo.svg' %}" alt="Logo John's Life">
+        <h2>John's Life</h2>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        
+        <h1>L’histoire de John</h1>
+        <p>
+            John, c’est ce pote que tout le monde connaît : un mec sympa, maladroit,  
+            et surtout champion toutes catégories des rendez-vous foireux.  
+            À chaque tentative de flirt, c’est une anecdote épique qui naît.  
+            Son histoire, c’est un condensé des débuts de galère que tout le monde a vécus (mais qu’on préfère oublier).
+        </p>
+        <p>
+            Ce site, c’est le récit (semi-fictif, mais très inspiré) de ses aventures.  
+            Un mélange d’auto-dérision, de tendresse et de facepalms collectifs.
+            Entrez dans la vie de John, et qui sait... vous y reconnaîtrez peut-être un peu de vous-même.
+        </p>
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+

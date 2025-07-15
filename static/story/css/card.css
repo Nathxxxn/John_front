@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+  margin :0;
+  padding:0;
+}
+
+.carte {
+    align-content: center;
+    width: 800px;
+    background-color: #AB22FF;
+    border-radius: 30px;
+    padding: 5px;
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.1s ease-out;
+    margin-top: 20px;
+
+}
+.container {
+  display: flex;
+  padding: 3px;
+}
+
+.carte:hover, .more a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px 2px rgb(171, 34, 255, 0.2);
+
+}
+.content {
+  grid-area: content;
+  padding: 2rem;
+  margin: 0;
+  background-color: #ffff;
+  border-radius: 25px 25px 0 0px;
+  display: flex;
+  flex-direction: column
+}
+.carte h1 {
+  margin-top : 0;
+  color:  #AB22FF;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.carte h2 {
+  color: #2E2D4D;
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+.carte hr {
+  margin-left:0;
+  margin-bottom: 0;
+  color: #2E2D4D;
+  height : 1px;
+  width : 90%;
+  background-color: #2E2D4D;
+  align-self: left;
+}
+
+.more {
+  display: flex;
+
+}
+.more a {
+  border: 2px #ab22ff solid;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: #ab22ff;
+  font-weight: 800;
+  transition: all 0.1s ease-out;
+}
+.more a:hover{
+  background-color:  #ab22ff;
+  color: white;
+}
+
+.bandeau {
+  grid-area: bandeau;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+
+}
+
+
+
+.arrow_up, .arrow_down {
+  width:30px;
+  margin: 10px;
+}
+
+.up_clicked {
+  color: #42C259;
+}
+
+.up_neutral {
+  color: #2E2D4D;
+}
+.arrow_down {
+  transform: rotate(180deg);
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .carte {
+
+    border-radius: 20px;
+    margin: 0em;
+    width: 100%
+
+  }
+  .content {
+    padding: 2em;
+    border-radius: 15px 15px 0 0px;
+  }
+}
